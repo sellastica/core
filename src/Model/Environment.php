@@ -104,4 +104,12 @@ class Environment
 			return self::SELLASTICA_CRM;
 		}
 	}
+
+	/**
+	 * @return bool
+	 */
+	public function isCli(): bool
+	{
+		return in_array(PHP_SAPI, ['cli', 'cgi', 'fcgi', 'cgi-fcgi']);
+	}
 }
