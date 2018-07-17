@@ -55,6 +55,7 @@ abstract class AbstractAuthenticator
 
 		if ($identity instanceof Nette\Security\Identity) {
 			$this->user->login($identity);
+			$this->user->setExpiration('+ 14 days');
 			return $this->repository->find($identity->getId());
 		}
 	}
