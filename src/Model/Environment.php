@@ -7,10 +7,12 @@ use Nette\Utils\Strings;
 class Environment
 {
 	private const SELLASTICA = 'sellastica',
-		INTEGROID = 'integroid';
+		INTEGROID = 'integroid',
+		NAPOJSE = 'napojse';
 
 	private const SELLASTICA_CRM = 'crm',
-		INTEGROID_CRM = 'crm_integroid';
+		INTEGROID_CRM = 'crm_integroid',
+		NAPOJSE_CRM = 'napojse_crm';
 
 	/** @var string */
 	private $internalProject;
@@ -35,7 +37,7 @@ class Environment
 	 	IRequest $request
 	)
 	{
-		if (!in_array($internalProject, [self::SELLASTICA, self::INTEGROID])) {
+		if (!in_array($internalProject, [self::SELLASTICA, self::INTEGROID, self::NAPOJSE])) {
 			throw new \UnexpectedValueException(sprintf('Unknown internal project "%s"', $internalProject));
 		}
 
@@ -59,6 +61,14 @@ class Environment
 	public function isIntegroid(): bool
 	{
 		return $this->internalProject === self::INTEGROID;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isNapojSe(): bool
+	{
+		return $this->internalProject === self::NAPOJSE;
 	}
 
 	/**
@@ -100,6 +110,8 @@ class Environment
 	{
 		if ($this->isIntegroid()) {
 			return self::INTEGROID_CRM;
+		} elseif ($this->isNapojSe()) {
+			return self::NAPOJSE_CRM;
 		} else {
 			return self::SELLASTICA_CRM;
 		}
