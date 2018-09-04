@@ -12,7 +12,7 @@ class Environment
 
 	private const SELLASTICA_CRM = 'crm',
 		INTEGROID_CRM = 'crm_integroid',
-		NAPOJSE_CRM = 'napojse_crm';
+		NAPOJSE_CRM = 'crm_napojse';
 
 	/** @var string */
 	private $internalProject;
