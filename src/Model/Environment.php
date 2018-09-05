@@ -48,6 +48,14 @@ class Environment
 	}
 
 	/**
+	 * @return string
+	 */
+	public function getInternalProject(): string
+	{
+		return $this->internalProject;
+	}
+
+	/**
 	 * @return bool
 	 */
 	public function isSellastica(): bool
