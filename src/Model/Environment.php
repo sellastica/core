@@ -10,10 +10,9 @@ class Environment
 		INTEGROID = 'integroid',
 		NAPOJSE = 'napojse';
 
-	private const SELLASTICA_CRM = 'crm',
+	const SELLASTICA_CRM = 'crm',
 		INTEGROID_CRM = 'crm_integroid',
-		NAPOJSE_CRM = 'crm_napojse',
-		CRM_ALL = 'crm_all';
+		NAPOJSE_CRM = 'crm_napojse';
 
 	/** @var string */
 	private $internalProject;
@@ -129,9 +128,9 @@ class Environment
 	/**
 	 * @return string
 	 */
-	public function getCommonCrmDatabaseName(): string
+	public function getNapojSeCrmDatabaseName(): string
 	{
-		return self::CRM_ALL;
+		return self::NAPOJSE_CRM;
 	}
 
 	/**
