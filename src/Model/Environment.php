@@ -74,7 +74,7 @@ class Environment
 	/**
 	 * @return bool
 	 */
-	public function isNapojSe(): bool
+	public function isNapojse(): bool
 	{
 		return $this->internalProject === self::NAPOJSE;
 	}
@@ -118,7 +118,7 @@ class Environment
 	{
 		if ($this->isIntegroid()) {
 			return self::INTEGROID_CRM;
-		} elseif ($this->isNapojSe()) {
+		} elseif ($this->isNapojse()) {
 			return self::NAPOJSE_CRM;
 		} else {
 			return self::SELLASTICA_CRM;
@@ -128,7 +128,7 @@ class Environment
 	/**
 	 * @return string
 	 */
-	public function getNapojSeCrmDatabaseName(): string
+	public function getNapojseCrmDatabaseName(): string
 	{
 		return self::NAPOJSE_CRM;
 	}
