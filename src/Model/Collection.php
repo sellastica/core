@@ -102,6 +102,15 @@ class Collection implements \Countable, \ArrayAccess, \IteratorAggregate
 	}
 
 	/**
+	 * @param callable $callback
+	 * @return mixed|null
+	 */
+	public function findOneByCallback(callable $callback)
+	{
+		return $this->filter($callback)->first();
+	}
+
+	/**
 	 * @param callable $function
 	 * @return bool
 	 */
